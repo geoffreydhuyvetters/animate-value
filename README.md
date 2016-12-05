@@ -1,6 +1,6 @@
 # animate-value
 
-> 🚶 &#39;animates&#39; a numeric value
+> 🏃 animates a numeric value
 
 ![Node](https://img.shields.io/node/v/animate-value.svg?style=flat-square)
 [![NPM](https://img.shields.io/npm/v/animate-value.svg?style=flat-square)](https://www.npmjs.com/package/animate-value)
