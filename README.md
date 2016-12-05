@@ -141,6 +141,18 @@ av({
 });
 ```
 
+You can also use the Promise provided on `animate-value`
+
+```js
+import av from 'animate-value';
+
+av({
+  from: 0,
+  to: 10,
+  duration: 2000
+}).then(() => console.log('done'));
+```
+
 ### Examples
 
 See [`example`](example).
