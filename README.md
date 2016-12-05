@@ -74,8 +74,8 @@ av({
 ➖ **delay** ( Number ) ` ✏️ 0 `
 <br/> 📝 delay (in ms)
 
-➖ **loop** ( Boolean ) ` ✏️ 1 `
-<br/> 📝 loop the animation
+➖ **loop** ( Boolean | Number ) ` ✏️ 1 `
+<br/> 📝 loop the animation, `loop: true` creates an inifinite loop
 <br/> ℹ️ looping with `reverse: true` creates a back- and forwards animation
 
 ➖ **loopDelay** ( Number ) ` ✏️ 0 `
