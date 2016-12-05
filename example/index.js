@@ -13,7 +13,6 @@ av({
   loopDelay: 500,
   duration: 500,
 
-  change: value => console.log(value),
-  done: () => console.log(`DONE`)
+  change: value => console.log(value)
 
-});
+}).then(() => console.log(`finished`));

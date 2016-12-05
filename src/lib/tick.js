@@ -22,7 +22,7 @@ type data = {
   done?: Function
 }
 
-const tick = (data: data, label: number): void => {
+const tick = (data: data, label: number, resolve: Function): void => {
 
   const {
     start, end,
@@ -42,7 +42,7 @@ const tick = (data: data, label: number): void => {
 
       if (change && now() >= start) change(data.value);
 
-      label = requestAnimationFrame(() => tick(data, label));
+      label = requestAnimationFrame(() => tick(data, label, resolve));
 
     } else {
 
@@ -70,9 +70,10 @@ const tick = (data: data, label: number): void => {
           if (rewind) iteration = iteration / 2;
 
           if (loop === true || iteration <= loop) {
-            label = requestAnimationFrame(() => tick(data, label));
+            label = requestAnimationFrame(() => tick(data, label, resolve));
           } else {
             if (done) done();
+            resolve();
           }
 
         }

@@ -17,14 +17,16 @@ type options = {
   loop?: number | boolean,
   rewind? : boolean,
 
-  done? : Function,
+  done? : () => void,
   change? : () => number
 
 };
 
-export default (options: options = {}) => {
+export default (options: options = {}): Promise<any> => {
 
-  const {
+  return new Promise(resolve => {
+
+    const {
     from = 0,
     to = 1,
     easing = `easeInQuad`,
@@ -36,27 +38,27 @@ export default (options: options = {}) => {
     done
   } = options;
 
-  let {loop = 1} = options;
-  if (loop === false) loop = 1;
+    let {loop = 1} = options;
+    if (loop === false) loop = 1;
 
-  let data = {
-    from,
-    to,
-    duration,
-    delay,
-    loopDelay,
-    loop,
-    easing,
-    rewind,
-    change,
-    done
-  };
+    let data = {
+      from,
+      to,
+      duration,
+      delay,
+      loopDelay,
+      loop,
+      easing,
+      rewind,
+      change,
+      done
+    };
 
-  data = Object.assign({}, data, calcStartEnd(delay, duration));
-  data.iteration = 1;
+    data = Object.assign({}, data, calcStartEnd(delay, duration));
+    data.iteration = 1;
 
-  const raf: number = requestAnimationFrame(() => tick(data, raf));
+    const raf: number = requestAnimationFrame(() => tick(data, raf, resolve));
 
-  return data;
+  });
 
 };
