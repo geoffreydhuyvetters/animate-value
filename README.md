@@ -103,8 +103,8 @@ You can choose one of these easing functions (default is `easeInOutQuad`)
 - easeOutQuint
 - easeInOutQuint
 
-based on https://gist.github.com/gre/1650294#gistcomment-1806616
-<br/>all credit to (@lindell)[https://github.com/lindell]
+based on [https://gist.github.com/gre/1650294#gistcomment-1806616](https://gist.github.com/gre/1650294#gistcomment-1806616)
+<br/>all credit to [@lindell](https://github.com/lindell)
 
 
 ### events
