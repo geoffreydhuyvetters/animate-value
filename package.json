@@ -1,6 +1,6 @@
 {
   "name": "animate-value",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "🏃 animates a numeric value",
   "main": "cjs/index.js",
   "module": "es/index.js",
