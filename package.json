@@ -4,6 +4,7 @@
   "description": "🏃 animates a numeric value",
   "main": "cjs/index.js",
   "module": "es/index.js",
+  "browser": "dist/animateValue.min.js",
   "jsxnext:main": "es/index.js",
   "files": [
     "dist",
