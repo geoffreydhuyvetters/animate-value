@@ -46,6 +46,8 @@ const tick = (data: data, label: number, resolve: Function): void => {
 
     } else {
 
+      if (change) change(data.to);
+
       if (loop) {
 
         if (rewind) {
