@@ -143,7 +143,7 @@ av({
 
 ### Examples
 
-See [`example`](example/script.js) folder or the [runkit](https://runkit.com/duivvv/animate-value) example.
+See [`example`](example) folder or the [runkit](https://runkit.com/duivvv/animate-value) example.
 
 ### License
 
