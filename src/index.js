@@ -1,5 +1,6 @@
 // @flow
 
+import type {Easing} from './lib/ease';
 import tick from './lib/tick';
 import calcStartEnd from './lib/calc/calcStartEnd';
 
@@ -8,7 +9,7 @@ type options = {
   from?: number,
   to?: number,
 
-  easing? : string,
+  easing?: Easing,
 
   duration?: number,
   delay?: number,
@@ -17,8 +18,8 @@ type options = {
   loop?: number | boolean,
   rewind? : boolean,
 
-  done? : () => void,
-  change? : () => number
+  done?: () => void,
+  change?: () => number
 
 };
 
@@ -27,16 +28,16 @@ export default (options: options = {}): Promise<any> => {
   return new Promise(resolve => {
 
     const {
-    from = 0,
-    to = 1,
-    easing = `easeInQuad`,
-    duration = 600,
-    delay = 0,
-    loopDelay = 0,
-    rewind = false,
-    change,
-    done
-  } = options;
+      from = 0,
+      to = 1,
+      easing = `easeInQuad`,
+      duration = 600,
+      delay = 0,
+      loopDelay = 0,
+      rewind = false,
+      change,
+      done
+    } = options;
 
     let {loop = 1} = options;
     if (loop === false) loop = 1;

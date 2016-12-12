@@ -1,3 +1,5 @@
+// @flow
+
 // based on these https://gist.github.com/gre/1650294#gistcomment-1806616
 // all credit to @lindell
 
@@ -5,7 +7,30 @@ import easeInOut from './lib/easeInOut';
 import easeOut from './lib/easeOut';
 import easeIn from './lib/easeIn';
 
-export default {
+export type EasingFunction = (time: number) => number;
+export type Easing = string | EasingFunction;
+
+const namedEasings: {
+
+  linear: EasingFunction,
+
+  easeInQuad: EasingFunction,
+  easeOutQuad: EasingFunction,
+  easeInOutQuad: EasingFunction,
+
+  easeInCubic: EasingFunction,
+  easeOutCubic: EasingFunction,
+  easeInOutCubic: EasingFunction,
+
+  easeInQuart: EasingFunction,
+  easeOutQuart: EasingFunction,
+  easeInOutQuart: EasingFunction,
+
+  easeInQuint: EasingFunction,
+  easeOutQuint: EasingFunction,
+  easeInOutQuint: EasingFunction
+
+} = {
 
   linear: easeInOut(1),
 
@@ -26,3 +51,5 @@ export default {
   easeInOutQuint: easeInOut(5)
 
 };
+
+export default namedEasings;
