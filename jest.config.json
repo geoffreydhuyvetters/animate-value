@@ -3,7 +3,7 @@
   "coverageDirectory": "<rootDir>/coverage/",
   "collectCoverageFrom": ["src/**/*.js"],
   "setupFiles": [
-    "<rootDir>/__tests__/setup/raf.js"
+    "<rootDir>/__tests__/setup/polyfills.js"
   ],
   "coveragePathIgnorePatterns": [
     "<rootDir>/es/",
