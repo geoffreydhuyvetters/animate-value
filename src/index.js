@@ -1,6 +1,7 @@
 // @flow
 
 import type {Easing} from './lib/ease';
+import namedEasings from './lib/ease';
 import tick from './lib/tick';
 import calcStartEnd from './lib/calc/calcStartEnd';
 
@@ -23,7 +24,7 @@ type options = {
 
 };
 
-export default (options: options = {}): Promise<any> => {
+const animateValue = (options: options = {}): Promise<any> => {
 
   return new Promise(resolve => {
 
@@ -63,3 +64,7 @@ export default (options: options = {}): Promise<any> => {
   });
 
 };
+
+animateValue.easings = Object.assign({}, namedEasings);
+
+export default animateValue;
