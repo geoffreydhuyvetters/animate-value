@@ -29,7 +29,7 @@
     "lint:flow": "flow --color always",
     "lint:build": "npm run lint && npm run build:cjs -s",
     "lint:build:test": "npm run lint:build && npm run test:coverage",
-    "test": "clear && BABEL_DISABLE_CACHE=1 NODE_ENV=test jest --config jest.config.json",
+    "test": "clear && NODE_ENV=test jest --config jest.config.json",
     "test:watch": "npm t -- --watch",
     "test:coverage": "npm t -- --coverage ",
     "build": "clear && npm run lint:build:test && npm run build:es && npm run build:umd",
