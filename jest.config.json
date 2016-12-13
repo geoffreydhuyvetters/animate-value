@@ -1,0 +1,14 @@
+{
+  "testRegex": "\\.test\\.js$",
+  "coverageDirectory": "<rootDir>/coverage/",
+  "collectCoverageFrom": ["src/**/*.js"],
+  "setupFiles": [
+    "<rootDir>/__tests__/setup/polyfills.js"
+  ],
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/es/",
+    "<rootDir>/cjs/",
+    "<rootDir>/dist/",
+    "<rootDir>/node_modules/"
+  ]
+}

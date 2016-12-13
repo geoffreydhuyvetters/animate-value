@@ -1,10 +1,14 @@
 // @flow
 
-import ease from '../ease/';
+import type {EasingFunction, Easing} from '../ease';
+import namedEasings from '../ease/';
 
-export default (start: number, duration: number, easing: string): number => {
+export default (start: number, duration: number, easing: Easing): number => {
 
   const prog: number = (Date.now() - start) / duration;
-  return ease[easing](prog);
+  const ease: EasingFunction = (typeof easing === `string`)
+    ? namedEasings[easing] || ((t: number) => t)
+    : easing;
+  return ease(prog);
 
 };

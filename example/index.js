@@ -2,7 +2,9 @@ require(`raf/polyfill`);
 
 const av = require(`../`);
 
-av({
+const {easings} = av;
+
+const anim1 = av({
 
   to: 10,
 
@@ -12,7 +14,33 @@ av({
   delay: 1000,
   loopDelay: 500,
   duration: 500,
+  easing: `linear`,
 
-  change: value => console.log(value)
+  change: value => console.log(`anim1: ${value}`)
 
-}).then(() => console.log(`finished`));
+});
+
+const anim2 = av({
+
+  to: 10,
+
+  duration: 500,
+  easing: t => t < 0.5 ? 0 : 1,
+
+  change: value => console.log(`anim2: ${value}`)
+
+});
+
+const anim3 = av({
+
+  to: 10,
+
+  duration: 500,
+  easing: easings.easeInQuad,
+
+  change: value => console.log(`anim2: ${value}`)
+
+});
+
+
+Promise.all([anim1, anim2, anim3]).then(() => console.log(`finished`));

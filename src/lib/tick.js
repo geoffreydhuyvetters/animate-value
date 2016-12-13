@@ -1,5 +1,6 @@
 // @flow
 
+import type {Easing} from './ease';
 import calcStartEnd from './calc/calcStartEnd';
 import calcProgress from './calc/calcProgress';
 
@@ -8,7 +9,7 @@ import now from './time/now';
 type data = {
   to: number,
   from: number,
-  easing: string,
+  easing: Easing,
   duration: number,
   loop: number | boolean,
   rewind: boolean,
